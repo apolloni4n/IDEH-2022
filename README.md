@@ -1,4 +1,7 @@
 ## INPT DNS 
+![date](https://img.shields.io/badge/date-06.03.2022-brightgreen.svg)  
+![solved during CTF](https://img.shields.io/badge/solved-during%20CTF-red.svg) 
+![Network category](https://img.shields.io/badge/category-Network-lightgrey.svg)
 DNS Zone , check writeup for more information
 ### Challenge Description
 <br/>
@@ -12,7 +15,9 @@ I tried dig requesting TXT records.This says DNS zone so I googled it to find th
 
 ## Palette 
 <img src="palette.PNG"/> 
-
+![date](https://img.shields.io/badge/date-06.03.2022-brightgreen.svg)  
+![solved during CTF](https://img.shields.io/badge/solved-during%20CTF-red.svg) 
+![Steg category](https://img.shields.io/badge/category-Stegano-lightgrey.svg)
 Open the image in the GIMP editor, select the color picker tool in the tools menu, select each box from these 18 boxes by color picker.
 The HTML notation in hexadecimal of these colors in 18 box will be:
 43ffff  52ffff  49ffff  53ffff  49ffff  53ffff
@@ -27,6 +32,9 @@ CRISIS{k65P8XeaHT}
 <img src="gimp.png"/> 
 
 ## Login:
+![date](https://img.shields.io/badge/date-06.03.2022-brightgreen.svg)  
+![solved during CTF](https://img.shields.io/badge/solved-during%20CTF-red.svg) 
+![Reverse category](https://img.shields.io/badge/category-Reverse-lightgrey.svg)
 First I tried to unpack the apk file given to us using apktool. You can do this with the command:
 
  ```$apktool d login.apk ```
@@ -35,6 +43,9 @@ First I tried to unpack the apk file given to us using apktool. You can do this 
 <img src="login.png"/> 
 
 ## The magic of php:
+![date](https://img.shields.io/badge/date-06.03.2022-brightgreen.svg)  
+![solved during CTF](https://img.shields.io/badge/solved-during%20CTF-red.svg) 
+![Web category](https://img.shields.io/badge/category-Web-lightgrey.svg)
 This challenge gives you the source code of the web page 
 
 - Website : http://18.168.221.53/
@@ -49,3 +60,16 @@ So I got the idea to crack this hash:
 <img src="hash1.png"/> 
 - what we get is a HEX value 206b6d3831303838 which we enter as a password and the flag gets displayed
 - <img src="flag-magic.png"/> 
+- 
+## The gold bug 1843: 
+![date](https://img.shields.io/badge/date-06.03.2022-brightgreen.svg)  
+![solved during CTF](https://img.shields.io/badge/solved-during%20CTF-red.svg) 
+![Crypto category](https://img.shields.io/badge/category-Crypto-lightgrey.svg)
+
+
+We are provided with 2 png files the ***cipher.png*** file and ***the golden bug***
+- After reading the Text Layer Name with exiftool, we find the string we want to decode. This challenge describe some golden bug story, so this type of message has something to do with this method.
+<img src="exif-cipher.png"/> 
+<a href="https://en.wikipedia.org/wiki/The_Gold-Bug">The gold-bug(1843)</a>
+A simple search of how to decode this type of Message on Google we find the dcode page!
+<a href="https://www.dcode.fr/scarabee-or-poe">Dcode:Chiffre du Scarabée d'Or</a>
