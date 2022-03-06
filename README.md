@@ -7,7 +7,7 @@ DNS Zone , check writeup for more information
 I tried dig requesting TXT records.This says DNS zone so I googled it to find that DNS Zone transfer is sometimes referred through its opcode mnemonic AXFR.SO A zone transfer reveals a lot of information about the domain. that's why we get our flag!
 <img src="dig.png"/> 
 ### 
-2 <br/><a href="Exe inside elf/executable"> Executable here </a>  
+
 <br/>
 
 ## Palette 
