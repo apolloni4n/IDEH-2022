@@ -36,26 +36,15 @@ First I tried to unpack the apk file given to us using apktool. You can do this 
 
 ## The magic of php:
 This challenge gives you the source code of the web page 
-<?php
-if(isset ($_POST['password'])){
-    $password = $_POST['password'];
-    if(md5($password) == 0e7b1c8e2327e0881bf7058bd533dd22)
+
+- Website : http://18.168.221.53/
+And accessing the web page you can insert passwords, but the challenges asks to not use bruteforce on the page, Reading the source code ``` if(md5($password) == 0e7b1c8e2327e0881bf7058bd533dd22)
     {
         echo "$FLAG</br>";
     }
-    else echo "Incorrect Password </br>";
-}
-?>
-<html>
-    Enter your password : </br>
-    <form action="" method="POST">
-<input type="password" name="password"></input>    
-<input type="submit" ></input>
-</form>
-</html> 
-- Website : http://18.168.221.53/
-And accessing the web page you can insert passwords, but the challenges asks to not use bruteforce on the page, Reading the source code the is a clear condition on the md5($password) it should be the value "0e7b1c8e2327e0881bf7058bd533dd22" to see the flag.
+    else echo "Incorrect Password </br>";``` the is a clear condition on the md5($password) it should be the value "0e7b1c8e2327e0881bf7058bd533dd22" to see the flag.
 So I got the idea to crack this hash:
+
 ```$sudo hashcat -m 0 --force hash rockyou.txt ``` 
 <img src="hash1.png"/> 
 - what we get is a HEX value 206b6d3831303838 which we enter as a password and the flag gets displayed
