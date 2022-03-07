@@ -68,8 +68,38 @@ So I got the idea to crack this hash:
 
 
 We are provided with 2 png files the ***cipher.png*** file and ***the golden bug***
+<img src="cipher.PNG"/> 
+
 - After reading the Text Layer Name with exiftool, we find the string we want to decode. This challenge describe some golden bug story, so this type of message has something to do with this method.
 <img src="exif-cipher.png"/> 
 <a href="https://en.wikipedia.org/wiki/The_Gold-Bug">The gold-bug(1843)</a>
 A simple search of how to decode this type of Message on Google we find the dcode page!
 <a href="https://www.dcode.fr/scarabee-or-poe">Dcode:Chiffre du Scarabée d'Or</a>
+
+
+## Stolen Funds
+Here is the first smart contracts challenge I solved. Solving it allowed me to learn about accessing and inspecting contract storage. 
+
+### Additional information:
+
+- Network: Rinkeby
+- Address: 0x20402a4F943786DdF55D4Ffaf09EEe6752e820e2
+ As our challenge is, supposedly, to find a ***Hacker*** that have withdrawn some funds so I tried tracing those withdraws using this website, we can see all the transactions to that specific Adress of our Hacker:
+ <a href="https://rinkeby.etherscan.io/">Rinkeby</a>
+ 
+<img src="board.png"/> 
+We can see that there are 51 transactions associated with that contract. Let’s examine them.
+Decoding the Input Data of each transaction gives us a character:
+<img src="decoding.png"/> 
+I decided to give it a shot and gather those characters manually for each withdraw, to finnaly get the full flag.
+
+## PDF challenge: 
+![date](https://img.shields.io/badge/date-06.03.2022-brightgreen.svg)  
+![solved during CTF](https://img.shields.io/badge/solved-during%20CTF-red.svg) 
+![Steg category](https://img.shields.io/badge/category-Stegano-lightgrey.svg)
+The attachement of this challenge is just a PDF describing the competition which seemd suspicious to me.So it's the  chance to try the ***pdf2txt.py*** tool:
+ <a href="https://github.com/euske/pdfminer/blob/master/tools/pdf2txt.py">pdf2txt.py</a>
+
+<img src="pdf-steg1.png"/> 
+```python3 pdf2text.py pdf_stegano.pdf```
+<img src="pdf-steg2.png"/> 
